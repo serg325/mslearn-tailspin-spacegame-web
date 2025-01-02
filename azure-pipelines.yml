@@ -25,7 +25,7 @@ steps:
 - task: gulp@1
   displayName: 'Run gulp tasks'
 
-- script: 'echo "DefinitionName = $(Build.DefinitionName),\n BuildId= $(Build.BuildId),\n BuildNumber =$(Build.BuildNumber)" > buildinfo.txt'
+- script: 'echo "DefinitionName = $(Build.DefinitionName),"\n"BuildId = $(Build.BuildId),"\n"BuildNumber =$(Build.BuildNumber)" > buildinfo.txt'
   displayName: 'Write build info'
   workingDirectory: $(wwwrootDir)
 
