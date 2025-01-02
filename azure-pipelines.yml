@@ -33,7 +33,7 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: '$(Build.ArtifactStagingDirectory)/buildinfo.txt'
-     artifactName: 'buildinfo.txt'
+    artifactName: 'buildinfo.txt'
 
 - task: DotNetCoreCLI@2
   displayName: 'Restore project dependencies'
