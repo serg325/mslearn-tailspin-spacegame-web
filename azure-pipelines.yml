@@ -25,14 +25,16 @@ steps:
 - task: gulp@1
   displayName: 'Run gulp tasks'
 
-- script: 'echo -e " DefinitionName = $(Build.DefinitionName),\n BuildId = $(Build.BuildId),\n BuildNumber =$(Build.BuildNumber)" > buildinfo.txt'
+- script: 'echo -e "DefinitionName=$(Build.DefinitionName)\nBuildId=$(Build.BuildId)\nBuildNumber=$(Build.BuildNumber)" > buildinfo.txt'
   displayName: 'Write build info'
   workingDirectory: $(wwwrootDir)
 
 - task: PublishBuildArtifacts@1
+  displayName: 'Publish buildinfo.txt'
   inputs:
-    pathToPublish: 'buildinfo.txt'
-    artifactName: 'buildinfo.txt'
+    pathToPublish: '$(wwwrootDir)/buildinfo.txt'
+    artifactName: 'buildinfo'
+  condition: succeededOrFailed()
 
 - task: DotNetCoreCLI@2
   displayName: 'Restore project dependencies'
