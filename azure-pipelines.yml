@@ -1,8 +1,7 @@
 trigger:
 - '*'
 
-pool:
-  vmImage: ubuntu-latest
+pool: MyAgentPool
 
 variables:
   buildConfiguration: 'Release'
