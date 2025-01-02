@@ -31,7 +31,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)/buildinfo.txt'
+    pathToPublish: '$(wwwrootDir)/buildinfo.txt'
     artifactName: 'buildinfo.txt'
 
 - task: DotNetCoreCLI@2
