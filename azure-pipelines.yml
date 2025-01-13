@@ -110,7 +110,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      vmImage: 'ubuntu-20.04'
+      name: myAgentPool
     environment: test
     variables:
     - group: 'Release'
